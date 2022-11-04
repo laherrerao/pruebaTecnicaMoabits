@@ -32,19 +32,19 @@
         <div class="form-group">
         <label for="identificacion">Identificacion</label>
         <input  class="form-control" type="text" name="identificacion" th:field="*{identificacion}" placeholder="Numero de identificacion"/>
-        <span  th:if="${#fields.hasErrors('identificacion')}" th:errors="*{identificacion}">el campo no debe de estar vacio</span>
+
         </div>
         <br>
         <div class="form-group">
         <label for="nombre">Nombre</label>
         <input class="form-control" type="text" name="nombre" th:field="*{nombre}" placeholder="Nombre Completo"/>
-            <span  th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">el campo no debe de estar vacio</span>
+
         </div>
         <br>
         <div class="form-group">
         <label for="edad">Edad</label>
-        <input class="form-control" type="number" name="edad" th:field="*{edad}" placeholder="Edad"/>
-            <span  th:if="${#fields.hasErrors('edad')}" th:errors="*{edad}">el campo no debe de estar vacio</span>
+        <input class="form-control" type="text" name="edad" th:field="*{edad}" placeholder="Edad"/>
+
         </div>
         <br>
         <div class="form-group">

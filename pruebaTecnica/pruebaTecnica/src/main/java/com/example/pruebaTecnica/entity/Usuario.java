@@ -3,6 +3,7 @@ package com.example.pruebaTecnica.entity;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 
 @Entity
@@ -20,7 +21,7 @@ public class Usuario {
     @javax.validation.constraints.NotEmpty
     @Column(name="nombre")
     private String nombre;
-    @javax.validation.constraints.NotEmpty
+
     @Column(name="edad")
     private int edad;
 
