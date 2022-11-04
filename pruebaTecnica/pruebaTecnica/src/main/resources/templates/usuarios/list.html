@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="htpp://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>lista de usuarios</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.0.0/css/all.min.css}" >
+</head>
+<body>
+  <h1>lista de usuarios</h1>
+
+  <ul class="nav">
+
+          <form method="post" th:action="@{/logout}">
+              <a href="#" onclick="this.parentNode.submit();" class="nav-link">
+                  <i class="fas fa-user-times"></i>
+                  Salir
+              </a>
+          </form>
+      </li>
+      </li>
+
+  </ul>
+    <ul class="nav">
+        <li class="nav-item">
+    <a  class="btn btn-outline-primary" th:href="@{/}" role="button">Home</a>
+        </li>
+        <br>
+        <li class="nav-item">
+    <a  class="btn btn-outline-success" th:href="@{/usuarios/crear}" role="button">Nuevo Usuario</a>
+        </li>
+    </ul>
+
+
+    <section>
+        <div class="container">
+            <div class="card">
+                <h5 class="card-tittle">Lista de usuarios</h5>
+                <div class="card-body">
+                    <div th:if="${usuarios !=null and !usuarios.empty}">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>N</th>
+                                <th>Identificacion</th>
+                                <th>Nombre</th>
+                                <th>Edad</th>
+                                <th>Telefono</th>
+                                <th>Direccion</th>
+                                <th>Email</th>
+                                <th>Login</th>
+                                <th>rol</th>
+                                <th>Editar</th>
+                                <th>Eliminar</th>
+                            </tr>
+                            </thead>
+                            <tbody >
+                            <tr th:each="usuario,contador: ${usuarios}">
+                                <td th:text ="${contador.count}"></td>
+                                <td th:text ="${usuario.identificacion}"></td>
+                                <td th:text ="${usuario.nombre}"></td>
+                                <td th:text ="${usuario.edad}"></td>
+                                <td th:text ="${usuario.telefono}"></td>
+                                <td th:text ="${usuario.direccion}"></td>
+                                <td th:text ="${usuario.email}"></td>
+                                <td th:text ="${usuario.login}"></td>
+                                <td th:text ="${usuario.rol}"></td>
+
+                                <td>
+
+                                    <a class="btn btn-outline-warning"  th:href="@{/editar/} + ${usuario.idUsuario}" th:text="Editar" role="button" >
+                                    <i class="fas fa-edit"></i>
+                                </a></td>
+                                <td>
+
+                                    <a class="btn btn-outline-danger" th:href="@{/eliminar/} + ${usuario.idUsuario}" th:text="Eliminar"  role="button">
+                                    <i class="fas fa-remove"></i>
+                                    </a>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+</html>

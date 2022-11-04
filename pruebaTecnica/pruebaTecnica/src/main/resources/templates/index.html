@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="htpp://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.0.0/css/all.min.css}" >
+    <title>Prueba técnica Moabits</title>
+</head>
+<body>
+    <h5 th:text="${msj}"></h5>
+    <ul class="nav">
+        <li class="nav-item">
+            <a  class="btn btn-outline-primary" th:href="@{/}" role="button">Home</a>
+        <li class="nav-item">
+            <form method="post" th:action="@{/logout}">
+                <a href="#" onclick="this.parentNode.submit();" class="nav-link">
+                    <i class="fas fa-user-times"></i>
+                    Salir
+                </a>
+            </form>
+        </li>
+        </li>
+
+    </ul>
+  <h1>Prueba técnica Junior Developer</h1>
+    <p>Desarrolle la siguiente prueba, suba el resultado a Git y envíelo a people@moabits.com
+        junto con un video explicando tanto el funcionamiento, como el proceso de construcción
+        del sistema que desarrolló. El proyecto debe de tener todo lo necesario para ejecutarse en
+        otro equipo en su totalidad</p>
+
+    <p>Reto: Una empresa de telecomunicaciones solicita crear un programa que permita a un
+        usuario Administrador crear, modificar, consultar y eliminar usuarios para una compañía.</p>
+
+   <a  class="btn btn-primary" th:href="@{/usuarios/list}" role="button">Usuarios</a>
+</body>
+</html>
